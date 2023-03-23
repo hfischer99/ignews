@@ -25,9 +25,9 @@ export default function Posts({ posts }) {
 
       <main className={styles.container}>
         <div className={styles.posts}>
-          {posts.map((post) => (
+          {posts.map((post : any, index : number) => (
             <Link href={`/posts/${post.slug}`}>
-              <a key={post.slug}>
+              <a key={`${index}-${post.slug}`}>
                 <time>{post.updatedAt}</time>
                 <strong>{post.title}</strong>
                 <p>{post.excerpt}</p>
